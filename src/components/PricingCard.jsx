@@ -90,7 +90,7 @@ export const PricingCard = (props) => {
       <Box px="6" py="6" borderBottomWidth="1px" color="gray.600">
         <List stylePosition="outside" spacing="4">
           <FeatureItem>
-            Your LP tokens consists of{" "}
+            Your LP tokens consist of{" "}
             <b>{numberWithCommas(props?.userAprInfo?.userBPROBalance)}</b> BPRO
             + <b>{numberWithCommas(props?.userAprInfo?.userWETHBalance)}</b>{" "}
             WETH
