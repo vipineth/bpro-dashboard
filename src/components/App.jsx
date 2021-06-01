@@ -50,10 +50,10 @@ export const App = (props) => {
                 <a href="https://app.bprotocol.org/faq">
                   <NavItem icon={<BiUserCircle />} label="FAQ" />
                 </a>
-                <a href="https://app.bprotocol.org/faq">
+                <a href="https://discord.gg/bJ4guuw">
                   <NavItem icon={<BiUserCircle />} label="Discord" />
                 </a>
-                <a href="https://app.bprotocol.org/faq">
+                <a href=" https://twitter.com/bprotocoleth">
                   <NavItem icon={<BiUserCircle />} label="Twitter" />
                 </a>
                 <a href="https://scattershot.page/#/bpro.eth/proposal/QmR1rTEAnmT4CwYvC3MpkBsddLuWc5v5fUvwKEgUW6gwVM">

@@ -36,7 +36,7 @@ function StatsCard(props) {
             {numberWithCommas(userAprInfo?.rewardPerDay * days)} BPRO
           </StatLabel>
           <StatNumber fontSize={"2xl"} fontWeight="800">
-            {getUsdPrice(days) + " $"}
+            {"$ " + getUsdPrice(days)}
           </StatNumber>
         </Box>
       </Stat>

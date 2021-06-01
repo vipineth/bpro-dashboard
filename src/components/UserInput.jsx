@@ -10,7 +10,6 @@ import {
 } from "@chakra-ui/react";
 
 import { utils } from "ethers";
-import { CheckIcon } from "@chakra-ui/icons";
 import useFetch from "../utils/useFetch";
 import { PricingCard } from "./PricingCard";
 
@@ -26,6 +25,7 @@ import { Loader } from "./Loader";
 export function UserInput() {
   const [ethAddress, setETHAddress] = useState("");
   const [state, setState] = useState("initial");
+  const [isLoaded, setIsLoaded] = useState(false);
   const [error, setError] = useState("");
   const [usersReward] = useFetch();
   let [userAprInfo, setUserAprInfo] = useState(null);
@@ -48,10 +48,15 @@ export function UserInput() {
     }
     setError(false);
     setState("submitting");
+
     getUserInfo(ethAddress)
       .then((info) => {
         setState("success");
+        setIsLoaded(true);
         setUserAprInfo({ ...info });
+        setTimeout(() => {
+          setState("initial");
+        }, 3000);
       })
       .catch(() => {
         setError("Something went wrong while fetching data!");
@@ -103,14 +108,14 @@ export function UserInput() {
                 background: "green.200",
                 color: "gray.800",
               }}
-              bg={state === "success" ? "#0fc264" : "#3182ce"}
+              bg={state === "success" ? "#3182ce" : "#3182ce"}
               color="white"
-              isLoading={state === "submitting"}
+              isLoaded={state === "submitting"}
               loadingText="Loading"
               w="100%"
               type={state === "success" ? "button" : "submit"}
             >
-              {state === "success" ? <CheckIcon /> : "Submit"}
+              {state === "success" ? "Submit" : "Submit"}
             </Button>
           </FormControl>
         </Stack>
@@ -122,7 +127,7 @@ export function UserInput() {
           {error}
         </Text>
       </Flex>
-      {state === "success" ? (
+      {isLoaded ? (
         <PricingCard
           name="Total Reward"
           price={usersReward?.[ethAddress.toLowerCase()] || 0}
@@ -130,7 +135,7 @@ export function UserInput() {
           userAprInfo={userAprInfo ? { ...userAprInfo } : null}
         />
       ) : (
-        <Loader state={state} />
+        <Loader state={isLoaded} />
       )}
     </>
   );

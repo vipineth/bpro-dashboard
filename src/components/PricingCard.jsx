@@ -80,7 +80,7 @@ export const PricingCard = (props) => {
         <PriceDisplay
           my="2"
           currency="$"
-          price={price * 5}
+          price={price * props.userAprInfo?.bproPrice}
           currency={currency}
         />
         <Text fontWeight="800" letterSpacing="wider" fontSize="lg">
@@ -103,11 +103,12 @@ export const PricingCard = (props) => {
           <FeatureItem>
             Your total investment is{" "}
             <b>
-              {numberWithCommas(
-                props?.userAprInfo?.userBPROBalance *
-                  props?.userAprInfo?.bproPrice *
-                  2
-              ) + " $"}
+              {"$" +
+                numberWithCommas(
+                  props?.userAprInfo?.userBPROBalance *
+                    props?.userAprInfo?.bproPrice *
+                    2
+                )}
             </b>
           </FeatureItem>
         </List>
