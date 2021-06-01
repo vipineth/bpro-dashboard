@@ -19,7 +19,7 @@ export const Loader = (props) => {
       p="4"
       direction="column"
     >
-      🎉 To check yout BPRO earnings please enter your ETH address above 👆! 🎉
+      🎉 To check your BPRO earnings please enter your ETH address above 👆! 🎉
       {props.state === "submitting" && (
         <Spinner
           thickness="4px"
