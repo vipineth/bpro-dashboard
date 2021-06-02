@@ -47,7 +47,7 @@ function Sidebar(props) {
             <a href="https://scattershot.page/#/bpro.eth/proposal/QmR1rTEAnmT4CwYvC3MpkBsddLuWc5v5fUvwKEgUW6gwVM">
               <NavItem
                 icon={<HiOutlineExternalLink />}
-                label="Know About BIP 1"
+                label="Learn about BIP-1"
               />
             </a>
             <a href="https://app.bprotocol.org/faq">
