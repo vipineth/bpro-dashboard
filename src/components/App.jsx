@@ -1,29 +1,20 @@
 import * as React from "react";
 import {
   Box,
-  Center,
-  Circle,
   Flex,
-  Heading,
   Stack,
+  Image,
   useColorModeValue as mode,
 } from "@chakra-ui/react";
 
-import {
-  BiBuoy,
-  BiCog,
-  BiCommentAdd,
-  BiCreditCard,
-  BiEnvelope,
-  BiHome,
-  BiUserCircle,
-  BiWallet,
-} from "react-icons/bi";
+import { BiHome } from "react-icons/bi";
 
 import { NavGroup } from "./NavGroup";
 import { NavItem } from "./NavItem";
 import { Stats } from "./Stats";
 import { UserReward } from "./UserReward";
+import { HiOutlineExternalLink } from "react-icons/hi";
+import { SocialMediaLinks } from "./SocialMediaLinks";
 
 export const App = (props) => {
   return (
@@ -38,39 +29,44 @@ export const App = (props) => {
             position="fixed"
             maxHeight="100vh"
           >
-            <Stack spacing="8" flex="1" overflow="auto" pt="8">
-              <Stack spacing="1">
-                <NavItem active icon={<BiHome />} label="Protocol Stats" />
-                <NavItem icon={<BiCommentAdd />} label="Check Reward" />
+            <Stack
+              spacing="8"
+              flex="1"
+              overflow="auto"
+              pt="8"
+              justifyContent="space-between"
+            >
+              <Stack spacing="10">
+                <Image objectFit="cover" src="/logo.svg" alt="Segun Adebayo" />
+                <NavItem active icon={<BiHome />} label="Check LP Reward" />
+                {/* <NavItem icon={<BiCommentAdd />} label="Check Reward" /> */}
               </Stack>
               <NavGroup label="Important Links">
                 <a href="https://app.bprotocol.org/app">
-                  <NavItem icon={<BiCreditCard />} label="B.Protocol App" />
-                </a>
-                <a href="https://app.bprotocol.org/faq">
-                  <NavItem icon={<BiUserCircle />} label="FAQ" />
-                </a>
-                <a href="https://discord.gg/bJ4guuw">
-                  <NavItem icon={<BiUserCircle />} label="Discord" />
-                </a>
-                <a href=" https://twitter.com/bprotocoleth">
-                  <NavItem icon={<BiUserCircle />} label="Twitter" />
+                  <NavItem
+                    icon={<HiOutlineExternalLink />}
+                    label="B.Protocol App"
+                  />
                 </a>
                 <a href="https://scattershot.page/#/bpro.eth/proposal/QmR1rTEAnmT4CwYvC3MpkBsddLuWc5v5fUvwKEgUW6gwVM">
-                  <NavItem icon={<BiUserCircle />} label="Know About BIP 1" />
+                  <NavItem
+                    icon={<HiOutlineExternalLink />}
+                    label="Know About BIP 1"
+                  />
                 </a>
+                <a href="https://app.bprotocol.org/faq">
+                  <NavItem icon={<HiOutlineExternalLink />} label="FAQ" />
+                </a>
+
+                <a href="https://v2.info.uniswap.org/pair/0x288d25592a995ca878b79762cb8ec5a95d2e888a">
+                  <NavItem icon={<HiOutlineExternalLink />} label="Uniswap" />
+                </a>
+                <a href="https://analytics.sushi.com/pairs/0x4a8428d6a407e57ff17878e8db21b4706116606f">
+                  <NavItem icon={<HiOutlineExternalLink />} label="Sushiswap" />
+                </a>
+                <SocialMediaLinks />
               </NavGroup>
             </Stack>
-            <Box>
-              <Stack spacing="1">
-                <NavItem
-                  subtle
-                  icon={<BiBuoy />}
-                  label="Latest Block"
-                  endElement={<Circle size="2" bg="blue.400" />}
-                />
-              </Stack>
-            </Box>
           </Flex>
         </Box>
         <Box bg={mode("gray.50", "gray.800")} flex="1" p="6" minH="100vh">

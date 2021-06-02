@@ -64,7 +64,6 @@ export const PricingCard = (props) => {
       rounded="lg"
       overflow="hidden"
       textAlign="center"
-      {...rest}
     >
       <Box bg="#d4f1e1" px="4" py="4" color="#0fc264">
         <Text

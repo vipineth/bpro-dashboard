@@ -110,7 +110,7 @@ export function UserInput() {
               }}
               bg={state === "success" ? "#3182ce" : "#3182ce"}
               color="white"
-              isLoaded={state === "submitting"}
+              isLoading={state === "submitting"}
               loadingText="Loading"
               w="100%"
               type={state === "success" ? "button" : "submit"}

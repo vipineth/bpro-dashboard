@@ -40,6 +40,7 @@ export const Stats = ({ aprPerDay }) => {
           >
             {aprData.map(({ label, value }) => (
               <StatCard
+                key={label}
                 accentColor="green.500"
                 icon={<HiClock />}
                 data={{
