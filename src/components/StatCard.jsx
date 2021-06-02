@@ -28,12 +28,9 @@ export const StatCard = (props) => {
         </Heading>
       </Box>
       <HStack spacing="3">
-        {/* <Circle flexShrink={0} size="6" bg={accentColor} color="white">
-          {icon}
-        </Circle> */}
         <Heading
           as="h1"
-          size="xl"
+          size="2xl"
           fontWeight="bold"
           color="white"
           bgGradient="linear(to-l, #18d2c3, #1fe86b)"

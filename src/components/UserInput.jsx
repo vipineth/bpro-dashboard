@@ -71,10 +71,16 @@ export function UserInput() {
     <>
       <Flex align={"center"} justify={"center"} py="10" direction="column">
         <Stack
-          direction="row"
+          direction={{
+            base: "column",
+            md: "row",
+          }}
           as={"form"}
           spacing={"12px"}
-          width="70%"
+          width={{
+            base: "100%",
+            md: "70%",
+          }}
           onSubmit={handleSubmit}
         >
           <FormControl>
@@ -101,7 +107,12 @@ export function UserInput() {
               p="4"
             />
           </FormControl>
-          <FormControl w="30%">
+          <FormControl
+            w={{
+              base: "100%",
+              md: "30%",
+            }}
+          >
             <Button
               height="12"
               _hover={{

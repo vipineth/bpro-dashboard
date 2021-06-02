@@ -36,23 +36,12 @@ export const UserReward = () => {
           md: "8",
         }}
       >
-        <Flex
-          direction="column"
-          align={{
-            base: "flex-start",
-            md: "center",
-          }}
-          maxW="2xl"
-          mx="auto"
-        >
+        <Flex direction="column" align="center" maxW="2xl" mx="auto">
           <Heading
             as="h1"
-            size="xl"
+            fontSize={{ base: "2xl", md: "4xl" }}
             fontWeight="extrabold"
-            textAlign={{
-              base: "start",
-              md: "center",
-            }}
+            textAlign="center"
           >
             Check Your BPRO LP Reward
           </Heading>
