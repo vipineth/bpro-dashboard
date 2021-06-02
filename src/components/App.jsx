@@ -4,6 +4,7 @@ import {
   Flex,
   Stack,
   Image,
+  Text,
   useColorModeValue as mode,
 } from "@chakra-ui/react";
 
@@ -22,6 +23,7 @@ export const App = (props) => {
       <Flex h="full" id="app-container" minH="100vh">
         <Box w="64" bg="gray.900" color="white" fontSize="sm">
           <Flex
+            w="64"
             h="full"
             direction="column"
             px="4"
@@ -64,7 +66,16 @@ export const App = (props) => {
                 <a href="https://analytics.sushi.com/pairs/0x4a8428d6a407e57ff17878e8db21b4706116606f">
                   <NavItem icon={<HiOutlineExternalLink />} label="Sushiswap" />
                 </a>
+
                 <SocialMediaLinks />
+                <Text
+                  mt="4"
+                  fontSize="sm"
+                  display="inline-block"
+                  wordBreak="break-word"
+                >
+                  This project is developed and maintained by the community.
+                </Text>
               </NavGroup>
             </Stack>
           </Flex>
