@@ -21,7 +21,6 @@ export const UserReward = () => {
       bg={mode("gray.800", "gray.600")}
       py="12"
       mt="2"
-      mx="8"
       rounded="xl"
       shadow="base"
     >

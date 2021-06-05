@@ -32,7 +32,15 @@ export const App = (props) => {
             md: "3px dashed currentColor",
           }}
           color={mode("gray.300", "gray.700")}
-          pb="8"
+          py={{
+            base: "1",
+            md: "8",
+          }}
+          px={{
+            base: ".5",
+            md: "8",
+          }}
+          pb="6"
         >
           <Stats aprPerDay={props.aprPerDay} />
 

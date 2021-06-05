@@ -17,17 +17,13 @@ export const Stats = ({ aprPerDay }) => {
     { label: "Yearly APR", value: formatPercentage(aprPerDay * 365) },
   ];
   return (
-    <Box as="section" bg={mode("gray.50", "gray.800")} py="8">
+    <Box as="section" bg={mode("gray.50", "gray.800")}>
       <Box
         maxW={{
           base: "xl",
           md: "7xl",
         }}
         mx="auto"
-        px={{
-          base: "6",
-          md: "8",
-        }}
       >
         <Box bg={mode("gray.800", "white")} p="10" rounded="xl" shadow="base">
           <Stack
