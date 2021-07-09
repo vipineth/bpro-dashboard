@@ -27,7 +27,7 @@ export function UserInput() {
   const [state, setState] = useState("initial");
   const [isLoaded, setIsLoaded] = useState(false);
   const [error, setError] = useState("");
-  const [usersReward] = useFetch();
+  const [usersReward, setUsersReward] = useState([]);
   let [userAprInfo, setUserAprInfo] = useState(null);
 
   async function getUserInfo(userAddr) {
@@ -49,8 +49,11 @@ export function UserInput() {
     setError(false);
     setState("submitting");
 
-    getUserInfo(ethAddress)
-      .then((info) => {
+    useFetch().then(r => {
+      setUsersReward(r);
+      return getUserInfo(ethAddress);
+    })
+      .then(info => {
         setState("success");
         setIsLoaded(true);
         setUserAprInfo({ ...info });
