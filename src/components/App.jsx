@@ -42,7 +42,7 @@ export const App = (props) => {
           }}
           pb="6"
         >
-          <Stats aprPerDay={props.aprPerDay} />
+          <Stats />
 
           <UserReward aprPerDay={props.aprPerDay} />
         </Box>

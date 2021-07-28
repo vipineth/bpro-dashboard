@@ -11,10 +11,15 @@ import { formatPercentage } from "../utils/helper";
 import { StatCard } from "./StatCard";
 
 export const Stats = ({ aprPerDay }) => {
+  // let aprData = [
+  //   { label: "Daily APR", value: formatPercentage(aprPerDay) },
+  //   { label: "Monthly APR", value: formatPercentage(aprPerDay * 30) },
+  //   { label: "Yearly APR", value: formatPercentage(aprPerDay * 365) },
+  // ];
   let aprData = [
-    { label: "Daily APR", value: formatPercentage(aprPerDay) },
-    { label: "Monthly APR", value: formatPercentage(aprPerDay * 30) },
-    { label: "Yearly APR", value: formatPercentage(aprPerDay * 365) },
+    { label: "Daily APR", value: "0.00" },
+    { label: "Monthly APR", value: "0.00" },
+    { label: "Yearly APR", value: "0.00" },
   ];
   return (
     <Box as="section" bg={mode("gray.50", "gray.800")}>

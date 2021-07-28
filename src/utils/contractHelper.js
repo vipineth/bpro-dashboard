@@ -4,7 +4,38 @@ import { utils } from "ethers";
 import { bproRewardPerMonth, getCoinPrice } from "./addresses";
 import { ERC_20_ABI } from "./abis";
 
-export async function getLPContractInfo(contractAddress, ABI, userAddress) {
+export async function getLPInfo(contractAddress, ABI) {
+  const ethcallProvider = new Provider();
+  await ethcallProvider.init(provider);
+  const contract = new Contract(contractAddress, ABI);
+  const calls = [
+    contract.decimals(),
+    contract.token0(),
+    contract.token1(),
+    contract.symbol(),
+    contract.name(),
+    contract.totalSupply(),
+    contract.getReserves(),
+  ];
+  const [decimals, token0, token1, symbol, name, totalSupply, reserves] =
+    await ethcallProvider.all(calls);
+
+  return {
+    decimals,
+    token0,
+    token1,
+    symbol,
+    name,
+    totalSupply,
+    reserves,
+  };
+}
+
+export async function getLPContractInfo(
+  contractAddress,
+  ABI,
+  userAddress = ""
+) {
   const ethcallProvider = new Provider();
   await ethcallProvider.init(provider);
   const contract = new Contract(contractAddress, ABI);

@@ -6,8 +6,10 @@ import {
   getAPRDetails,
   getERC20Info,
   getLPContractInfo,
+  getLPInfo,
 } from "../utils/contractHelper";
 import { useEffect, useState } from "react";
+import { utils } from "ethers";
 let userAddress = "0xe864166688e95618920e32619753e23175f189ce";
 
 function Home() {
@@ -20,6 +22,13 @@ function Home() {
         getERC20Info(bproAddr, ERC_20_ABI, uniLPAddr),
         getERC20Info(bproAddr, ERC_20_ABI, sushiLPAddr),
       ]);
+      let lpData = await Promise.all([
+        getLPInfo(uniLPAddr, UNI_ABI),
+        getLPInfo(sushiLPAddr, UNI_ABI),
+      ]);
+
+      let lpSupplyData = lpData.map((lp) => lp.totalSupply);
+
       let { aprPerDay } = getAPRDetails(
         uniLPinfo,
         sushiLPinfo,

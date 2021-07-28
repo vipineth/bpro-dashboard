@@ -1,6 +1,6 @@
 import {
   Box,
-  Button,
+  Link,
   Flex,
   Heading,
   Img,
@@ -9,6 +9,7 @@ import {
   SimpleGrid,
   useColorModeValue as mode,
 } from "@chakra-ui/react";
+import { ExternalLinkIcon } from "@chakra-ui/icons";
 import * as React from "react";
 
 import { PricingCard } from "./PricingCard";
@@ -42,8 +43,20 @@ export const UserReward = () => {
             fontWeight="extrabold"
             textAlign="center"
           >
-            Check Your BPRO LP Reward
+            BPRO LP Mining has ENDED
           </Heading>
+          <Text
+            mt="4"
+            fontSize="lg"
+            textAlign={{
+              base: "left",
+              md: "center",
+            }}
+            color={mode("gray.500", "gray.400")}
+          >
+            To check the final reward that you received you can enter your ETH
+            address below.
+          </Text>
           <Text
             mt="4"
             fontSize="xl"
@@ -53,8 +66,15 @@ export const UserReward = () => {
             }}
             color={mode("gray.500", "gray.400")}
           >
-            You get rewarded for providing liquidity to (BPRO-ETH) on Sushiswap
-            and Uniswap pools
+            Rewards (76k BPRO) were distributed in{" "}
+            <Link
+              href="https://etherscan.io/tx/0xd1075b2c88791d3eed9978425e492e8b45e88266e34324476b320f9747841547"
+              target="_blank"
+              rel="noopener"
+              textDecoration="underline"
+            >
+              this transaction <ExternalLinkIcon />
+            </Link>
           </Text>
         </Flex>
         <UserInput />

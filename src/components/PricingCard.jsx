@@ -86,7 +86,7 @@ export const PricingCard = (props) => {
           {price.toFixed(2) + " BPRO"}
         </Text>
       </Box>
-      <Box px="6" py="6" borderBottomWidth="1px" color="gray.600">
+      {/* <Box px="6" py="6" borderBottomWidth="1px" color="gray.600">
         <List stylePosition="outside" spacing="4">
           <FeatureItem>
             Your LP tokens consist of{" "}
@@ -114,7 +114,7 @@ export const PricingCard = (props) => {
       </Box>
       <Box px="6" py="6">
         <UserEarningStats userAprInfo={props.userAprInfo} />
-      </Box>
+      </Box> */}
     </Box>
   );
 };
